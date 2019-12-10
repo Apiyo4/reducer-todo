@@ -3,6 +3,7 @@ import React, { useReducer } from 'react';
 import './App.css';
 import {reducer, initialState} from './reducers/reducer'
 import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
 
 function App() {
   const [state] = useReducer(reducer, initialState)
@@ -16,6 +17,7 @@ function App() {
       // console.log('todo:', todo)
       return <TodoList todo = {todo} key= {todo.id} />
     })}
+    <TodoForm />
       
      
     </div>

@@ -4,12 +4,10 @@ import './App.css';
 import {reducer, initialState} from './reducers/reducer'
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
+// import { formReducer, initialState } from './reducers/formReducer';
 
 function App() {
-  const [state] = useReducer(reducer, initialState)
-
-  // console.log(state.todoList);
-
+  const [state, dispatch] = useReducer(reducer, initialState)
   return (
 
     <div className="App">
@@ -17,7 +15,7 @@ function App() {
       // console.log('todo:', todo)
       return <TodoList todo = {todo} key= {todo.id} />
     })}
-    <TodoForm />
+    <TodoForm state={state} dispatch={dispatch} />
       
      
     </div>

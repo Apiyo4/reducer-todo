@@ -14,7 +14,8 @@ function App() {
         type: CROSS_TODO,
         payload: {id}
     })
-}
+} 
+
   return (
 
     <div className="App">

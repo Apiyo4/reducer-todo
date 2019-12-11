@@ -32,6 +32,7 @@ export const initialState = {
 export const SUBMIT = 'SUBMIT';
 export const INPUT_CHANGE = 'INPUT_CHANGE';
 export const CROSS_TODO = 'CROSS_TODO';
+export const CLEAR_TODO = 'CLEAR_TODO';
 export function reducer(state, action){
     switch(action.type){
         case INPUT_CHANGE: 
@@ -65,6 +66,10 @@ export function reducer(state, action){
                return todo;
              }
          })
+          }
+        case CLEAR_TODO:
+          return{
+            todoList: state.todoList.filter(todo=> !(todo.completed=== true))
           }
         default:
             return state;

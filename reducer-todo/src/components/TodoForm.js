@@ -1,5 +1,5 @@
 import React from 'react';
-import { INPUT_CHANGE, SUBMIT} from '../reducers/reducer';
+import { INPUT_CHANGE, SUBMIT, CROSS_TODO} from '../reducers/reducer';
 function TodoForm({state, dispatch}){
    
     const onValueChange = event =>{
@@ -12,12 +12,12 @@ function TodoForm({state, dispatch}){
     }
     const onFormSubmit = event =>{
         event.preventDefault();
-        
         dispatch({
         type: SUBMIT,
         })
         
     }
+    
     return(
         <div>
             <form onSubmit={onFormSubmit}>

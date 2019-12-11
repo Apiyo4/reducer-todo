@@ -5,7 +5,11 @@ function TodoList(props){
     // console.log(props.todo)
     return(
         <div>
-            <p>{props.todo.task} </p>
+            <p 
+             onClick={()=>props.crossTodo(props.todo.id)}
+            className =  {props.todo.completed ? 'completed' : '' }>
+                {props.todo.task} 
+            </p>
             
         </div>
     )

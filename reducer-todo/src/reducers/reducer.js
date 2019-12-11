@@ -31,6 +31,7 @@ export const initialState = {
 }
 export const SUBMIT = 'SUBMIT';
 export const INPUT_CHANGE = 'INPUT_CHANGE';
+export const CROSS_TODO = 'CROSS_TODO';
 export function reducer(state, action){
     switch(action.type){
         case INPUT_CHANGE: 
@@ -52,6 +53,19 @@ export function reducer(state, action){
                 
 
             }
+        case CROSS_TODO:
+          return{
+            todoList: state.todoList.map(todo => {
+              if (todo.id === action.payload.id) {
+                return {
+                  ...todo,
+                   completed: !(todo.completed)
+               };
+             } else {
+               return todo;
+             }
+         })
+          }
         default:
             return state;
     }
